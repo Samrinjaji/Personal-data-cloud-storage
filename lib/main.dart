@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -90,46 +91,43 @@ class HomePage extends StatelessWidget {
 }
 
 class SecondPage extends StatelessWidget {
-  const SecondPage({super.key});
+  const SecondPage({Key? key});
 
   @override
   Widget build(BuildContext context) {
-    // Define the color #333333
     Color buttonColor = const Color(0xFF333333);
+    double buttonWidth = 140;
 
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(50), // Adjust the height as needed
+        preferredSize: const Size.fromHeight(50),
         child: AppBar(
-          backgroundColor: const Color(0xFF05E0E9), // AppBar color
+          backgroundColor: const Color(0xFF05E0E9),
         ),
       ),
       body: Stack(
         children: [
           Container(
-            color: const Color(0xFFC0F0F7), // Body background color
+            color: const Color(0xFFC0F0F7),
           ),
-          // Adding the second logo similar to the first page
           Positioned(
-            top: 100, // Adjusted top position to position between the sphere and app bar
+            top: 100,
             left: 0,
             right: 0,
             child: Center(
               child: Column(
                 children: [
-                  // Placeholder for the image logo with text 'PD'
                   Container(
-                    width: 250, // Adjust width as needed
-                    height: 200, // Adjust height as needed
+                    width: 250,
+                    height: 200,
                     decoration: const BoxDecoration(
-                      // You can customize the decoration for the image logo
                       image: DecorationImage(
-                        image: AssetImage('assets/sphere-cloud.png'), // Replace 'assets/sphere-cloud.png' with your image path
+                        image: AssetImage('assets/sphere-cloud.png'),
                       ),
                     ),
                     child: const Center(
                       child: Padding(
-                        padding: EdgeInsets.only(right: 35), // Adjust left padding as needed
+                        padding: EdgeInsets.only(right: 35),
                         child: Text(
                           'PD',
                           style: TextStyle(
@@ -141,56 +139,54 @@ class SecondPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 20), // Add spacing between logo and text
+                  const SizedBox(height: 20),
                   const Text(
                     'Cloud Storage',
                     style: TextStyle(fontSize: 30, fontFamily: 'FingerPaint'),
                   ),
-                  const SizedBox(height: 20), // Add spacing between text and buttons
-                  // Add the boxes and 'OR' text
+                  const SizedBox(height: 20),
                   Column(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(left: 20.0, right: 20.0), // Add left and right padding
+                        padding: const EdgeInsets.only(left: 20.0, right: 20.0,top: 90.0),
                         child: Container(
-                          height: 52, // Set height as needed
+                          width: buttonWidth,
+                          height: 52,
                           decoration: BoxDecoration(
-                            color: buttonColor, // Using the color #333333
+                            color: buttonColor,
                           ),
                           child: TextButton(
                             onPressed: () {
-                              Navigator.pushNamed(context, '/signIn'); // Navigate to SignInPage
+                              Navigator.pushNamed(context, '/signIn');
                             },
                             child: const Text(
                               'Click to sign in',
-                              style: TextStyle(color: Colors.white, fontFamily: 'FingerPaint'),
+                              style: TextStyle(color: Colors.white, fontFamily: 'FingerPaint', fontSize: 14),
                             ),
                           ),
                         ),
                       ),
-                      const SizedBox(height: 15), // Add spacing between buttons
+                      const SizedBox(height: 15),
                       const Text(
                         'Or',
-                        style: TextStyle(
-                            fontSize: 18,
-                            color: Colors.black, fontFamily: 'FingerPaint'
-                        ),
+                        style: TextStyle(fontSize: 18, color: Colors.black, fontFamily: 'FingerPaint'),
                       ),
-                      const SizedBox(height: 15), // Add spacing between 'OR' text and second button
+                      const SizedBox(height: 15),
                       Padding(
-                        padding: const EdgeInsets.only(left: 90.0, right: 90.0), // Add left and right padding
+                        padding: const EdgeInsets.only(left: 20.0, right: 20.0),
                         child: Container(
-                          height: 52, // Set height as needed
+                          width: buttonWidth,
+                          height: 52,
                           decoration: BoxDecoration(
-                            color: buttonColor, // Using the color #333333
+                            color: buttonColor,
                           ),
                           child: TextButton(
                             onPressed: () {
-                              Navigator.pushNamed(context, '/login'); // Navigate to LoginPage
+                              Navigator.pushNamed(context, '/login');
                             },
                             child: const Text(
                               'Click to log in',
-                              style: TextStyle(color: Colors.white, fontFamily: 'FingerPaint'),
+                              style: TextStyle(color: Colors.white, fontFamily: 'FingerPaint', fontSize: 16),
                             ),
                           ),
                         ),
@@ -201,10 +197,9 @@ class SecondPage extends StatelessWidget {
               ),
             ),
           ),
-          // Adding the additional text
           const Positioned(
-            top: 0,
-            bottom: 0, // Adjust the bottom position as needed
+            top: 180,
+            bottom: 0,
             left: -150,
             right: 0,
             child: Center(
@@ -215,8 +210,8 @@ class SecondPage extends StatelessWidget {
             ),
           ),
           const Positioned(
-            top: 0,
-            bottom: 0, // Adjust the bottom position as needed
+            top: 180,
+            bottom: 0,
             left: 0,
             right: -150,
             child: Center(
@@ -227,9 +222,9 @@ class SecondPage extends StatelessWidget {
             ),
           ),
           const Positioned(
-            top: 214,
-            bottom: 0, // Adjust the bottom position as needed
-            left: -140,
+            top: 396,
+            bottom: 0,
+            left: -150,
             right: 0,
             child: Center(
               child: Text(
@@ -239,10 +234,10 @@ class SecondPage extends StatelessWidget {
             ),
           ),
           const Positioned(
-            top: 214,
-            bottom: 0, // Adjust the bottom position as needed
+            top: 396,
+            bottom: 0,
             left: 0,
-            right: -140,
+            right: -150,
             child: Center(
               child: Text(
                 ']', // Your additional text
@@ -256,12 +251,14 @@ class SecondPage extends StatelessWidget {
   }
 }
 
+
 class SignInPage extends StatelessWidget {
-  const SignInPage({super.key});
+  const SignInPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     Color buttonColor = const Color(0xFF333333);
+    double buttonWidth = 140; // Set a fixed width for the buttons
 
     return Scaffold(
       appBar: PreferredSize(
@@ -316,6 +313,7 @@ class SignInPage extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(left: 20.0, right: 20.0),
                         child: Container(
+                          width: buttonWidth,
                           height: 52,
                           decoration: BoxDecoration(
                             color: buttonColor,
@@ -338,8 +336,9 @@ class SignInPage extends StatelessWidget {
                       ),
                       const SizedBox(height: 15),
                       Padding(
-                        padding: const EdgeInsets.only(left: 150.0, right: 150.0),
+                        padding: const EdgeInsets.only(left: 20.0, right: 20.0),
                         child: Container(
+                          width: buttonWidth,
                           height: 52,
                           decoration: BoxDecoration(
                             color: buttonColor,
@@ -362,7 +361,7 @@ class SignInPage extends StatelessWidget {
             ),
           ),
           const Positioned(
-            top: 0,
+            top: -90,
             bottom: 0,
             left: -150,
             right: 0,
@@ -374,7 +373,7 @@ class SignInPage extends StatelessWidget {
             ),
           ),
           const Positioned(
-            top: 0,
+            top: -90,
             bottom: 0,
             left: 0,
             right: -150,
@@ -386,9 +385,9 @@ class SignInPage extends StatelessWidget {
             ),
           ),
           const Positioned(
-            top: 214,
+            top: 125,
             bottom: 0,
-            left: -140,
+            left: -150,
             right: 0,
             child: Center(
               child: Text(
@@ -398,10 +397,10 @@ class SignInPage extends StatelessWidget {
             ),
           ),
           const Positioned(
-            top: 214,
+            top: 125,
             bottom: 0,
             left: 0,
-            right: -140,
+            right: -150,
             child: Center(
               child: Text(
                 ']', // Your additional text
@@ -416,17 +415,19 @@ class SignInPage extends StatelessWidget {
 }
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+  const LoginPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     Color buttonColor = const Color(0xFF333333);
+    double buttonWidth = 140; // Set a fixed width for the buttons
 
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(50),
         child: AppBar(
           backgroundColor: const Color(0xFF05E0E9),
+          automaticallyImplyLeading: false, // Removes the back button
         ),
       ),
       body: Stack(
@@ -474,13 +475,14 @@ class LoginPage extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(left: 20.0, right: 20.0),
                         child: Container(
+                          width: buttonWidth,
                           height: 52,
                           decoration: BoxDecoration(
                             color: buttonColor,
                           ),
                           child: TextButton(
                             onPressed: () {
-                              // Add your log-in functionality here
+                              // Add your sign-in functionality here
                             },
                             child: const Text(
                               'Gmail',
@@ -496,8 +498,9 @@ class LoginPage extends StatelessWidget {
                       ),
                       const SizedBox(height: 15),
                       Padding(
-                        padding: const EdgeInsets.only(left: 150.0, right: 150.0),
+                        padding: const EdgeInsets.only(left: 20.0, right: 20.0),
                         child: Container(
+                          width: buttonWidth,
                           height: 52,
                           decoration: BoxDecoration(
                             color: buttonColor,
@@ -520,7 +523,7 @@ class LoginPage extends StatelessWidget {
             ),
           ),
           const Positioned(
-            top: 0,
+            top: -90,
             bottom: 0,
             left: -150,
             right: 0,
@@ -532,7 +535,7 @@ class LoginPage extends StatelessWidget {
             ),
           ),
           const Positioned(
-            top: 0,
+            top: -90,
             bottom: 0,
             left: 0,
             right: -150,
@@ -544,9 +547,9 @@ class LoginPage extends StatelessWidget {
             ),
           ),
           const Positioned(
-            top: 214,
+            top: 125,
             bottom: 0,
-            left: -140,
+            left: -150,
             right: 0,
             child: Center(
               child: Text(
@@ -556,10 +559,10 @@ class LoginPage extends StatelessWidget {
             ),
           ),
           const Positioned(
-            top: 214,
+            top: 125,
             bottom: 0,
             left: 0,
-            right: -140,
+            right: -150,
             child: Center(
               child: Text(
                 ']', // Your additional text
@@ -569,6 +572,10 @@ class LoginPage extends StatelessWidget {
           ),
         ],
       ),
+
     );
   }
 }
+
+
+
