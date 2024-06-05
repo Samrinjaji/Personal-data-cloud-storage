@@ -323,6 +323,9 @@ class SecondPage extends StatelessWidget {
   }
 }
 
+
+
+
 class ThirdPage extends StatelessWidget {
   const ThirdPage({Key? key}) : super(key: key);
 
@@ -477,12 +480,43 @@ class ThirdPage extends StatelessWidget {
               ),
             ),
           ),
+          Positioned(
+            bottom: 150, // Adjust the bottom position as needed
+            right: 15, // Adjust the right position as needed
+            child: InkWell(
+              // InkWell for tap effect
+              onTap: () {
+                // Handle button press action
+              },
+              child: Stack(
+                children: [
+                  Icon(
+                    Icons.folder, // Folder icon
+                    color: Colors.black, // Icon color
+                    size: 50, // Icon size
+                  ),
+                  Positioned(
+                    bottom: 23, // Adjust the bottom position as needed
+                    right: 22, // Adjust the right position as needed
+                    child: Container(
+                      width: 20, // Adjust width as needed
+                      height: 20, // Adjust height as needed
+                      child: Icon(
+                        Icons.check,
+                        color: Colors.white,
+                        size: 35,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
         ],
       ),
     );
   }
 }
-
 
 
 
