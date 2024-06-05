@@ -323,9 +323,6 @@ class SecondPage extends StatelessWidget {
   }
 }
 
-
-
-
 class ThirdPage extends StatelessWidget {
   const ThirdPage({Key? key}) : super(key: key);
 
@@ -517,7 +514,6 @@ class ThirdPage extends StatelessWidget {
     );
   }
 }
-
 
 
 class SignInPage extends StatelessWidget {
