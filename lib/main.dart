@@ -420,11 +420,44 @@ class ThirdPage extends StatelessWidget {
               ),
             ),
           ),
+          Positioned(
+            bottom: 250, // Adjust the bottom position as needed
+            right: 20, // Adjust the right position as needed
+            child: ClipOval(
+              // ClipOval widget to apply border radius
+              child: Material(
+                color: Colors.black, // Button color
+                child: InkWell(
+                  // InkWell for tap effect
+                  onTap: () {
+                    // Handle button press action
+                  },
+                  child: SizedBox(
+                    width: 40, // Button width
+                    height: 40, // Button height
+                    child: Transform.translate(
+                      offset: const Offset(0, -8), // Translate the text vertically
+                      child: Center(
+                        child: Text(
+                          '=', // Equal sign
+                          style: TextStyle(
+                            color: Colors.white, // Text color
+                            fontSize: 40, // Text size
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );
   }
 }
+
 
 class SignInPage extends StatelessWidget {
   const SignInPage({Key? key}) : super(key: key);
