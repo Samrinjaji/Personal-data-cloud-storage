@@ -259,6 +259,7 @@ class SignInPage extends StatelessWidget {
   Widget build(BuildContext context) {
     Color buttonColor = const Color(0xFF333333);
     double buttonWidth = 140; // Set a fixed width for the buttons
+    double buttonExit = 55;
 
     return Scaffold(
       appBar: PreferredSize(
@@ -304,7 +305,7 @@ class SignInPage extends StatelessWidget {
                   ),
                   const SizedBox(height: 25),
                   const Text(
-                    'Sign in',
+                    'Sign In',
                     style: TextStyle(fontSize: 30, fontFamily: 'FingerPaint'),
                   ),
                   const SizedBox(height: 40),
@@ -408,6 +409,30 @@ class SignInPage extends StatelessWidget {
               ),
             ),
           ),
+          Positioned(
+            bottom: 20,
+            left: 0,
+            right: 0,
+            child: Center(
+              child: Container(
+                width: buttonExit,
+                height: buttonExit, // Make the container a square for a circular shape
+                decoration: const ShapeDecoration(
+                  color: Colors.white, // Changed color to white
+                  shape: CircleBorder(),
+                ),
+                child: TextButton(
+                  onPressed: () {
+                    Navigator.pop(context); // Closes the current screen
+                  },
+                  child: const Text(
+                    'Exit',
+                    style: TextStyle(color: Colors.black, fontFamily: 'FingerPaint'),
+                  ),
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );
@@ -421,6 +446,7 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     Color buttonColor = const Color(0xFF333333);
     double buttonWidth = 140; // Set a fixed width for the buttons
+    double buttonExit = 55;
 
     return Scaffold(
       appBar: PreferredSize(
@@ -570,9 +596,32 @@ class LoginPage extends StatelessWidget {
               ),
             ),
           ),
+          Positioned(
+            bottom: 20,
+            left: 0,
+            right: 0,
+            child: Center(
+              child: Container(
+                width: buttonExit,
+                height: buttonExit, // Make the container a square for a circular shape
+                decoration: const ShapeDecoration(
+                  color: Colors.white, // Changed color to white
+                  shape: CircleBorder(),
+                ),
+                child: TextButton(
+                  onPressed: () {
+                    Navigator.pop(context); // Closes the current screen
+                  },
+                  child: const Text(
+                    'Exit',
+                    style: TextStyle(color: Colors.black, fontFamily: 'FingerPaint'),
+                  ),
+                ),
+              ),
+            ),
+          ),
         ],
       ),
-
     );
   }
 }
