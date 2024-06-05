@@ -452,11 +452,38 @@ class ThirdPage extends StatelessWidget {
               ),
             ),
           ),
+          Positioned(
+            bottom: 200, // Adjust the bottom position as needed
+            right: 20, // Adjust the right position as needed
+            child: ClipOval(
+              // ClipOval widget to apply border radius
+              child: Material(
+                color: Colors.black, // Button color
+                child: InkWell(
+                  // InkWell for tap effect
+                  onTap: () {
+                    // Handle button press action
+                  },
+                  child: SizedBox(
+                    width: 40, // Button width
+                    height: 40, // Button height
+                    child: const Icon(
+                      Icons.play_arrow, // Example icon, replace with desired icon
+                      color: Colors.white, // Icon color
+                      size: 30, // Icon size
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );
   }
 }
+
+
 
 
 class SignInPage extends StatelessWidget {
