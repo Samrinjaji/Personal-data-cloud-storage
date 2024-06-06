@@ -154,6 +154,29 @@ class _ThirdPageState extends State<ThirdPage> {
             ),
           ),
           Positioned(
+            bottom: 150,
+            right: 20,
+            child: ClipOval(
+              child: Material(
+                color: Colors.black,
+                child: InkWell(
+                  onTap: () {
+                    // Handle button press action
+                  },
+                  child: SizedBox(
+                    width: 40,
+                    height: 40,
+                    child: const Icon(
+                      Icons.folder,
+                      color: Colors.white,
+                      size: 30,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Positioned(
             top: -5,
             right: 5,
             child: Visibility(
