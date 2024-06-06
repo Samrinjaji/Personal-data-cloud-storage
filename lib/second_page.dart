@@ -65,6 +65,7 @@ class SecondPage extends StatelessWidget {
                     const SizedBox(height: 20),
                     Column(
                       children: [
+                        /* Commented out the "Click to sign in" button
                         Padding(
                           padding: const EdgeInsets.only(left: 20.0, right: 20.0, top: 90.0),
                           child: Container(
@@ -88,6 +89,7 @@ class SecondPage extends StatelessWidget {
                             ),
                           ),
                         ),
+                        */
                         const SizedBox(height: 15),
                         const Text(
                           'Or',
@@ -98,6 +100,7 @@ class SecondPage extends StatelessWidget {
                           ),
                         ),
                         const SizedBox(height: 15),
+                        /* Commented out the "Click to log in" button
                         Padding(
                           padding: const EdgeInsets.only(left: 20.0, right: 20.0),
                           child: Container(
@@ -121,6 +124,7 @@ class SecondPage extends StatelessWidget {
                             ),
                           ),
                         ),
+                        */
                         const SizedBox(height: 15),
                         const SizedBox(height: 30), // Added spacing here
                         Padding(
@@ -155,6 +159,7 @@ class SecondPage extends StatelessWidget {
                 ),
               ),
             ),
+            /* Commented out the Positioned widgets for the brackets
             const Positioned(
               top: 180,
               bottom: 0,
@@ -203,8 +208,10 @@ class SecondPage extends StatelessWidget {
                 ),
               ),
             ),
+            */
+            // Positioned widgets for the "Guest Mode" brackets remain intact
             const Positioned(
-              top: 592,
+              top: 200,
               bottom: 0,
               left: -150,
               right: 0,
@@ -216,7 +223,7 @@ class SecondPage extends StatelessWidget {
               ),
             ),
             const Positioned(
-              top: 592,
+              top: 200,
               bottom: 0,
               left: 0,
               right: -150,

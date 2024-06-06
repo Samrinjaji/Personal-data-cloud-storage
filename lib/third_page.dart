@@ -8,7 +8,112 @@ class ThirdPage extends StatefulWidget {
 }
 
 class _ThirdPageState extends State<ThirdPage> {
-  bool isButtonVisible = false;
+  bool isListButtonVisible = false;
+  bool isAccountButtonVisible = false;
+
+  void _toggleListButtonsVisibility() {
+    setState(() {
+      isListButtonVisible = !isListButtonVisible;
+    });
+  }
+
+  void _toggleAccountButtonsVisibility() {
+    setState(() {
+      isAccountButtonVisible = !isAccountButtonVisible;
+    });
+  }
+
+  void _showUserDialog() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return Dialog(
+          backgroundColor: const Color(0xFF05E0E9),
+          child: DecoratedBox(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.zero,
+              border: Border.all(color: Colors.black),
+            ),
+            child: SizedBox(
+              width: 300,
+              height: 700,
+              child: Container(
+                padding: const EdgeInsets.all(20),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    const Text(
+                      'User Account',
+                      style: TextStyle(
+                        fontFamily: 'FingerPaint',
+                        color: Colors.black,
+                        fontSize: 30,
+                        decoration: TextDecoration.underline,
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                      child: const Text(
+                        'Guest Mode',
+                        style: TextStyle(
+                          fontFamily: 'FingerPaint',
+                          color: Colors.black,
+                          fontSize: 12,
+                          decoration: TextDecoration.underline,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    const Text(
+                      'Samrin',
+                      style: TextStyle(
+                        fontFamily: 'FingerPaint',
+                        color: Colors.black,
+                        fontSize: 24,
+                        decoration: TextDecoration.underline,
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                      child: const Text(
+                        'Password',
+                        style: TextStyle(
+                          fontFamily: 'FingerPaint',
+                          color: Colors.black,
+                          fontSize: 12,
+                          decoration: TextDecoration.underline,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    const Text(
+                      '*************',
+                      style: TextStyle(
+                        fontFamily: 'FingerPaint',
+                        color: Colors.black,
+                        fontSize: 24,
+                        decoration: TextDecoration.underline,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        );
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +126,7 @@ class _ThirdPageState extends State<ThirdPage> {
             Icons.list,
             size: 50,
           ),
-          onPressed: () {},
+          onPressed: _toggleListButtonsVisibility, // Toggle list buttons visibility
         ),
         actions: [
           IconButton(
@@ -30,11 +135,7 @@ class _ThirdPageState extends State<ThirdPage> {
               size: 45,
               color: Colors.black,
             ),
-            onPressed: () {
-              setState(() {
-                isButtonVisible = !isButtonVisible; // Toggle button visibility
-              });
-            },
+            onPressed: _toggleAccountButtonsVisibility, // Toggle account buttons visibility
           ),
         ],
         title: null,
@@ -74,6 +175,78 @@ class _ThirdPageState extends State<ThirdPage> {
                     ),
                   ),
                 ],
+              ),
+            ),
+          ),
+          Positioned(
+            top: 95,
+            left: 5,
+            child: Visibility(
+              visible: isListButtonVisible,
+              child: TextButton(
+                onPressed: () {},
+                style: TextButton.styleFrom(
+                  backgroundColor: const Color(0xFF333333),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.zero,
+                  ),
+                ),
+                child: const Text(
+                  'Can',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontFamily: 'FingerPaint',
+                    fontSize: 12,
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Positioned(
+            top: 45,
+            left: 5,
+            child: Visibility(
+              visible: isListButtonVisible,
+              child: TextButton(
+                onPressed: () {},
+                style: TextButton.styleFrom(
+                  backgroundColor: const Color(0xFF333333),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.zero,
+                  ),
+                ),
+                child: const Text(
+                  'Titles',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontFamily: 'FingerPaint',
+                    fontSize: 12,
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Positioned(
+            top: -5,
+            left: 5,
+            child: Visibility(
+              visible: isListButtonVisible,
+              child: TextButton(
+                onPressed: () {},
+                style: TextButton.styleFrom(
+                  backgroundColor: const Color(0xFF333333),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.zero,
+                  ),
+                ),
+                child: const Text(
+                  'History',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontFamily: 'FingerPaint',
+                    fontSize: 12,
+                  ),
+                ),
               ),
             ),
           ),
@@ -180,18 +353,16 @@ class _ThirdPageState extends State<ThirdPage> {
             top: -5,
             right: 5,
             child: Visibility(
-              visible: isButtonVisible,
+              visible: isAccountButtonVisible,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   TextButton(
-                    onPressed: () {
-                      // Handle the onPressed event for the new button
-                    },
+                    onPressed: _showUserDialog,
                     style: TextButton.styleFrom(
                       backgroundColor: const Color(0xFF333333),
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.zero, // Box shape with zero border radius
+                        borderRadius: BorderRadius.zero,
                       ),
                     ),
                     child: const Text(
@@ -203,16 +374,16 @@ class _ThirdPageState extends State<ThirdPage> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 10), // Adjust the spacing between buttons as needed
+                  const SizedBox(height: 10),
                   TextButton(
                     onPressed: () {
-                      // Handle the onPressed event for the new button
+                      // Handle the onPressed event for the logout button
                     },
                     style: TextButton.styleFrom(
                       backgroundColor: const Color(0xFF333333),
-                      padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.zero, // Box shape with zero border radius
+                        borderRadius: BorderRadius.zero,
                       ),
                     ),
                     child: const Text(
