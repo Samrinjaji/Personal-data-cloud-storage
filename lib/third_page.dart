@@ -220,7 +220,7 @@ class _ThirdPageState extends State<ThirdPage> {
                       style: TextStyle(
                         color: Colors.white,
                         fontFamily: 'FingerPaint',
-                        fontSize: 14,
+                        fontSize: 12,
                       ),
                     ),
                   ),
